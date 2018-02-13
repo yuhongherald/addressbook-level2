@@ -132,7 +132,7 @@ public class UniquePersonList implements Iterable<Person> {
             internalList.add(nextPerson);
             unsortedList.remove(nextPerson);
         }
-        return Collections.unmodifiableList(unsortedList);
+        return immutableListView();
     }
 
     /**
