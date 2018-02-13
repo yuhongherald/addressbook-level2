@@ -122,6 +122,19 @@ public class UniquePersonList implements Iterable<Person> {
         }
     }
 
+    public void sortByName() {
+        List<Person> unsortedList = new ArrayList<>(internalList);
+        internalList.clear();
+        Person nextPerson;
+        while (!unsortedList.isEmpty())
+        {
+            nextPerson = unsortedList.get(0);
+            for (int i = 1; i < unsortedList.size(); i++) {
+                
+            }
+        }
+    }
+
     /**
      * Clears all persons in list.
      */
