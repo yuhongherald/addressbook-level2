@@ -22,12 +22,7 @@ public class SortCommand extends Command {
 
     @Override
     public CommandResult execute() {
-        List<ReadOnlyPerson> unsortedList = new ArrayList<>(addressBook.getAllPersons().immutableListView());
-        List<ReadOnlyPerson> sortedList = new ArrayList<>();
-        while (!unsortedList.isEmpty())
-        {
-
-        }
+        List<ReadOnlyPerson> sortedList = addressBook.getAllPersons().sortByName();
         return new CommandResult(getMessageForPersonListShownSummary(sortedList), sortedList);
     }
 }

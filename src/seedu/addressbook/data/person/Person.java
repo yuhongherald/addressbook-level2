@@ -2,6 +2,7 @@ package seedu.addressbook.data.person;
 
 import seedu.addressbook.data.tag.UniqueTagList;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -32,6 +33,10 @@ public class Person implements ReadOnlyPerson {
      */
     public Person(ReadOnlyPerson source) {
         this(source.getName(), source.getPhone(), source.getEmail(), source.getAddress(), source.getTags());
+    }
+
+    static Person pickSmallestPersonName(List<Person> personList) {
+        return null;
     }
 
     @Override

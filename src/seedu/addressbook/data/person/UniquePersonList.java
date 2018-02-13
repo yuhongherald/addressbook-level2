@@ -122,17 +122,17 @@ public class UniquePersonList implements Iterable<Person> {
         }
     }
 
-    public void sortByName() {
+    public List<ReadOnlyPerson> sortByName() {
         List<Person> unsortedList = new ArrayList<>(internalList);
         internalList.clear();
         Person nextPerson;
         while (!unsortedList.isEmpty())
         {
-            nextPerson = unsortedList.get(0);
-            for (int i = 1; i < unsortedList.size(); i++) {
-                
-            }
+            nextPerson = Person.pickSmallestPersonName(unsortedList);
+            internalList.add(nextPerson);
+            unsortedList.remove(nextPerson);
         }
+        return Collections.unmodifiableList(unsortedList);
     }
 
     /**
