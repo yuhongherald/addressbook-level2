@@ -122,6 +122,10 @@ public class UniquePersonList implements Iterable<Person> {
         }
     }
 
+    /**
+     * Sorts current list by name, then returns an immutable list
+     * @return An immutable list of persons, sorted by name
+     */
     public List<ReadOnlyPerson> sortByName() {
         List<Person> unsortedList = new ArrayList<>(internalList);
         internalList.clear();

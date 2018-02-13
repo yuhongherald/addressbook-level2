@@ -36,6 +36,19 @@ public class Person implements ReadOnlyPerson {
         this(source.getName(), source.getPhone(), source.getEmail(), source.getAddress(), source.getTags());
     }
 
+    /**
+     * Creates an exact copy of the person
+     * @return a copy of current person
+     */
+    public Person clonePerson() {
+        return new Person(getName(), getPhone(), getEmail(), getAddress(), getTags());
+    }
+
+    /**
+     * returns the person with smallest name in alphabetical order
+     * @param personList list of persons
+     * @return person with smallest name in alphabetical order
+     */
     static Person pickSmallestPersonName(List<Person> personList) {
         if (personList.isEmpty()) {
             return null;
