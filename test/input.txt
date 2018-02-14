@@ -147,7 +147,19 @@
   # clears all
   clear
   list
+  
+##########################################################
+# test sort command
+##########################################################
 
+  # empty list
+  sort
+
+  # already sorted
+  add Betsy Choo pp/222222 pe/benchoo@nus.edu.sg pa/222, beta street t/secretive
+  add Charlie Dickson pp/333333 e/charlie.d@nus.edu.sg a/333, gamma street t/friends t/school
+  sort
+  
 ##########################################################
 # test exit command
 ##########################################################
