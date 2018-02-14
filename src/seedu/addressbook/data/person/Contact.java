@@ -1,13 +1,30 @@
 package seedu.addressbook.data.person;
 
-public abstract class Contact {
-    public static final String EXAMPLE = "John Doe";
-    public static final String MESSAGE_NAME_CONSTRAINTS = "Person names should be spaces or alphabetic characters";
-    public static final String CONTACT_VALIDATION_REGEX = ".*"; // anything is valid
-    public final String value = null;
+import seedu.addressbook.data.exception.IllegalValueException;
 
-    public static boolean isValid(String test) {
-        return test.matches(CONTACT_VALIDATION_REGEX);
+/**
+ * Represents a contact detail in the address book.
+ * Guarantees: immutable; is valid as declared in {@link #isValidContact(String, String)}
+ */
+public abstract class Contact {
+
+    public final String value;
+
+    public Contact(String newValue, String regex, String constraints) throws IllegalValueException {
+        value = newValue;
+        String trimmedValue = newValue.trim();
+        if (!isValidContact(trimmedValue, regex)) {
+            throw new IllegalValueException(constraints);
+        }
+    }
+
+    /**
+     * Returns true if the contact is a valid contact.
+     * @param test contact under test
+     * @return if contact is valid
+     */
+    public static boolean isValidContact(String test, String regex) {
+        return test.matches(regex);
     };
 
     @Override
