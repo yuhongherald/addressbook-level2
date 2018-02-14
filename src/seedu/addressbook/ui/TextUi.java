@@ -24,14 +24,8 @@ public class TextUi {
     /** A decorative prefix added to the beginning of lines printed by AddressBook */
     private static final String LINE_PREFIX = "|| ";
 
-    /** A platform independent line separator. */
-    private static final String LS = System.lineSeparator();
-
-    private static final String DIVIDER = "===================================================";
-
     /** Format of indexed list item */
     private static final String MESSAGE_INDEXED_LIST_ITEM = "\t%1$d. %2$s";
-
 
     /** Offset required to convert between 1-indexing and 0-indexing.  */
     public static final int DISPLAYED_INDEX_OFFSET = 1;
@@ -95,28 +89,28 @@ public class TextUi {
     public void showWelcomeMessage(String version, String storageFilePath) {
         String storageFileInfo = String.format(MESSAGE_USING_STORAGE_FILE, storageFilePath);
         showToUser(
-                DIVIDER,
-                DIVIDER,
+                Formatter.DIVIDER,
+                Formatter.DIVIDER,
                 MESSAGE_WELCOME,
                 version,
                 MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE,
                 storageFileInfo,
-                DIVIDER);
+                Formatter.DIVIDER);
     }
 
     public void showGoodbyeMessage() {
-        showToUser(MESSAGE_GOODBYE, DIVIDER, DIVIDER);
+        showToUser(MESSAGE_GOODBYE, Formatter.DIVIDER, Formatter.DIVIDER);
     }
 
 
     public void showInitFailedMessage() {
-        showToUser(MESSAGE_INIT_FAILED, DIVIDER, DIVIDER);
+        showToUser(MESSAGE_INIT_FAILED, Formatter.DIVIDER, Formatter.DIVIDER);
     }
 
     /** Shows message(s) to the user */
     public void showToUser(String... message) {
         for (String m : message) {
-            out.println(LINE_PREFIX + m.replace("\n", LS + LINE_PREFIX));
+            out.println(LINE_PREFIX + m.replace("\n", Formatter.LS + LINE_PREFIX));
         }
     }
 
@@ -129,7 +123,7 @@ public class TextUi {
         if (resultPersons.isPresent()) {
             showPersonListView(resultPersons.get());
         }
-        showToUser(result.feedbackToUser, DIVIDER);
+        showToUser(result.feedbackToUser, Formatter.DIVIDER);
     }
 
     /**
