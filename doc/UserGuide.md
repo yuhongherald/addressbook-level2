@@ -111,6 +111,10 @@ Examples:
   `viewall 1`<br>
   Views all details of the 1st person in the results of the `find` command.
 
+### Sorting address book by name : `sort`
+Sorts all entries by name in alphabetical order before displaying.
+Format: sort
+  
 ### Clearing all entries : `clear`
 Clears all entries from the address book.<br>
 Format: `clear`  
