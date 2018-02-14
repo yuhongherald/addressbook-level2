@@ -57,13 +57,10 @@ public class Name implements Comparable<Name> {
     }
 
     @Override
-    public int hashCode() {
-        return fullName.hashCode();
-    }
+    public int hashCode() { return fullName.hashCode(); }
 
     @Override
-    public int compareTo(Name other)
-    {
+    public int compareTo(Name other) {
         return fullName.compareToIgnoreCase(other.fullName);
     }
 }

@@ -160,6 +160,10 @@
   add Charlie Dickson pp/333333 e/charlie.d@nus.edu.sg a/333, gamma street t/friends t/school
   sort
   
+  # requires sorting
+  add Adam Brown p/111111 e/adam@gmail.com a/111, alpha street
+  sort
+  
 ##########################################################
 # test exit command
 ##########################################################

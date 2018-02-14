@@ -35,7 +35,7 @@ public class SortCommandTest
         {
             throw new RuntimeException("Persons should be different by Person definition");
         }
-        SortCommand sortCommand = new SortCommand();
+        SortAndListCommand sortCommand = new SortAndListCommand();
         sortCommand.setData(book, EMPTY_PERSON_LIST);
         CommandResult result = sortCommand.execute();
         List<? extends ReadOnlyPerson> people;
@@ -72,7 +72,7 @@ public class SortCommandTest
         {
             throw new RuntimeException("Persons should be different by Person definition");
         }
-        SortCommand sortCommand = new SortCommand();
+        SortAndListCommand sortCommand = new SortAndListCommand();
         sortCommand.setData(book, EMPTY_PERSON_LIST);
         CommandResult result = sortCommand.execute();
         List<? extends ReadOnlyPerson> people;

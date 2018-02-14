@@ -55,11 +55,11 @@ public class Person implements ReadOnlyPerson {
         }
         Iterator<Person> iterator = personList.iterator();
         Person smallestPersonName = iterator.next();
-        Person nextSmallestPerson;
+        Person nextPerson;
         while (iterator.hasNext()) {
-            nextSmallestPerson = iterator.next();
-            if (nextSmallestPerson.isSmallerThanName(smallestPersonName)) {
-                smallestPersonName = nextSmallestPerson;
+            nextPerson = iterator.next();
+            if (nextPerson.isSmallerThanName(smallestPersonName)) {
+                smallestPersonName = nextPerson;
             }
         }
         return smallestPersonName;

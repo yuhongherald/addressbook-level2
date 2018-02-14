@@ -19,8 +19,8 @@
 || Example: find alice bob charlie
 || list: Displays all persons in the address book as a list with index numbers.
 || Example: list
-|| sort: Displays all persons in the address book as a list sorted by name.
-|| Example: sort
+|| sortAndList: Displays all persons in the address book as a list sorted by name.
+|| Example: sortAndList
 || view: Views the non-private details of the person identified by the index number in the last shown person listing.
 || Parameters: INDEX
 || Example: view 1
@@ -300,8 +300,31 @@
 || 0 persons listed!
 || ===================================================
 || Enter command: || [Command entered:  sort]
-|| 
-|| 0 persons listed!
+|| add: Adds a person to the address book. Contact details can be marked private by prepending 'p' to the prefix.
+|| Parameters: NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
+|| Example: add John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney
+|| delete: Deletes the person identified by the index number used in the last person listing.
+|| Parameters: INDEX
+|| Example: delete 1
+|| Clears address book permanently.
+|| Example: clear
+|| find: Finds all persons whose names contain any of the specified keywords (case-sensitive) and displays them as a list with index numbers.
+|| Parameters: KEYWORD [MORE_KEYWORDS]...
+|| Example: find alice bob charlie
+|| list: Displays all persons in the address book as a list with index numbers.
+|| Example: list
+|| sortAndList: Displays all persons in the address book as a list sorted by name.
+|| Example: sortAndList
+|| view: Views the non-private details of the person identified by the index number in the last shown person listing.
+|| Parameters: INDEX
+|| Example: view 1
+|| viewall: Views the non-private details of the person identified by the index number in the last shown person listing.
+|| Parameters: INDEX
+|| Example: viewall 1
+|| help: Shows program usage instructions.
+|| Example: help
+|| exit: Exits the program.
+|| Example: exit
 || ===================================================
 || Enter command: || [Command entered:  add Betsy Choo pp/222222 pe/benchoo@nus.edu.sg pa/222, beta street t/secretive]
 || New person added: Betsy Choo Phone: (private) 222222 Email: (private) benchoo@nus.edu.sg Address: (private) 222, beta street Tags: [secretive]
@@ -310,10 +333,61 @@
 || New person added: Charlie Dickson Phone: (private) 333333 Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
 || ===================================================
 || Enter command: || [Command entered:  sort]
-|| 	1. Betsy Choo Tags: [secretive]
-|| 	2. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
-|| 
-|| 2 persons listed!
+|| add: Adds a person to the address book. Contact details can be marked private by prepending 'p' to the prefix.
+|| Parameters: NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
+|| Example: add John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney
+|| delete: Deletes the person identified by the index number used in the last person listing.
+|| Parameters: INDEX
+|| Example: delete 1
+|| Clears address book permanently.
+|| Example: clear
+|| find: Finds all persons whose names contain any of the specified keywords (case-sensitive) and displays them as a list with index numbers.
+|| Parameters: KEYWORD [MORE_KEYWORDS]...
+|| Example: find alice bob charlie
+|| list: Displays all persons in the address book as a list with index numbers.
+|| Example: list
+|| sortAndList: Displays all persons in the address book as a list sorted by name.
+|| Example: sortAndList
+|| view: Views the non-private details of the person identified by the index number in the last shown person listing.
+|| Parameters: INDEX
+|| Example: view 1
+|| viewall: Views the non-private details of the person identified by the index number in the last shown person listing.
+|| Parameters: INDEX
+|| Example: viewall 1
+|| help: Shows program usage instructions.
+|| Example: help
+|| exit: Exits the program.
+|| Example: exit
+|| ===================================================
+|| Enter command: || [Command entered:  add Adam Brown p/111111 e/adam@gmail.com a/111, alpha street]
+|| New person added: Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags: 
+|| ===================================================
+|| Enter command: || [Command entered:  sort]
+|| add: Adds a person to the address book. Contact details can be marked private by prepending 'p' to the prefix.
+|| Parameters: NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
+|| Example: add John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney
+|| delete: Deletes the person identified by the index number used in the last person listing.
+|| Parameters: INDEX
+|| Example: delete 1
+|| Clears address book permanently.
+|| Example: clear
+|| find: Finds all persons whose names contain any of the specified keywords (case-sensitive) and displays them as a list with index numbers.
+|| Parameters: KEYWORD [MORE_KEYWORDS]...
+|| Example: find alice bob charlie
+|| list: Displays all persons in the address book as a list with index numbers.
+|| Example: list
+|| sortAndList: Displays all persons in the address book as a list sorted by name.
+|| Example: sortAndList
+|| view: Views the non-private details of the person identified by the index number in the last shown person listing.
+|| Parameters: INDEX
+|| Example: view 1
+|| viewall: Views the non-private details of the person identified by the index number in the last shown person listing.
+|| Parameters: INDEX
+|| Example: viewall 1
+|| help: Shows program usage instructions.
+|| Example: help
+|| exit: Exits the program.
+|| Example: exit
 || ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book as requested ...
