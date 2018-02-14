@@ -21,9 +21,6 @@ import seedu.addressbook.data.person.ReadOnlyPerson;
  */
 public class TextUi {
 
-    /** A decorative prefix added to the beginning of lines printed by AddressBook */
-    private static final String LINE_PREFIX = "|| ";
-
     /** Format of indexed list item */
     private static final String MESSAGE_INDEXED_LIST_ITEM = "\t%1$d. %2$s";
 
@@ -73,7 +70,7 @@ public class TextUi {
      * @return command (full line) entered by the user
      */
     public String getUserCommand() {
-        out.print(LINE_PREFIX + "Enter command: ");
+        out.print(Formatter.formatLine("Enter command: "));
         String fullInputLine = in.nextLine();
 
         // silently consume all ignored lines
@@ -85,32 +82,40 @@ public class TextUi {
         return fullInputLine;
     }
 
+    /**
+     * prints requested rows of line breaks
+     * @param rows of line break
+     */
+    public void printLineBreak(int rows) {
+        showToUser(Formatter.getDivider(rows));
+    }
 
     public void showWelcomeMessage(String version, String storageFilePath) {
         String storageFileInfo = String.format(MESSAGE_USING_STORAGE_FILE, storageFilePath);
+        printLineBreak(2);
         showToUser(
-                Formatter.DIVIDER,
-                Formatter.DIVIDER,
                 MESSAGE_WELCOME,
                 version,
                 MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE,
-                storageFileInfo,
-                Formatter.DIVIDER);
+                storageFileInfo);
+        printLineBreak(1);
     }
 
     public void showGoodbyeMessage() {
-        showToUser(MESSAGE_GOODBYE, Formatter.DIVIDER, Formatter.DIVIDER);
+        showToUser(MESSAGE_GOODBYE);
+        printLineBreak(2);
     }
 
 
     public void showInitFailedMessage() {
-        showToUser(MESSAGE_INIT_FAILED, Formatter.DIVIDER, Formatter.DIVIDER);
+        showToUser(MESSAGE_INIT_FAILED);
+        printLineBreak(2);
     }
 
     /** Shows message(s) to the user */
     public void showToUser(String... message) {
         for (String m : message) {
-            out.println(LINE_PREFIX + m.replace("\n", Formatter.LS + LINE_PREFIX));
+            out.println(Formatter.formatLine(m));
         }
     }
 
@@ -123,7 +128,8 @@ public class TextUi {
         if (resultPersons.isPresent()) {
             showPersonListView(resultPersons.get());
         }
-        showToUser(result.feedbackToUser, Formatter.DIVIDER);
+        showToUser(result.feedbackToUser);
+        printLineBreak(1);
     }
 
     /**
